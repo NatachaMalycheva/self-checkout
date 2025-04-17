@@ -1,15 +1,17 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import styles from "../weight.module.css";
 import Image from "next/image";
 import Button from "@/ui/components/Button";
 import AlphabetScroll from "@/ui/components/AlphabeticalScroller";
+import { useKeyboard } from "@/context/KeyboardContext";
 
 export default function ListStep({ productType, onNext, onBack, onCancel }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { setupKeyboard, hideKeyboard } = useKeyboard();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -40,8 +42,7 @@ export default function ListStep({ productType, onNext, onBack, onCancel }) {
     fetchProducts();
   }, [productType]);
 
-  const handleSearch = (e) => {
-    const searchValue = e.target.value;
+  const handleSearch = useCallback((searchValue) => {
     setSearchTerm(searchValue);
     
     if (searchValue.trim() === "") {
@@ -52,11 +53,21 @@ export default function ListStep({ productType, onNext, onBack, onCancel }) {
       );
       setFilteredProducts(filtered);
     }
-  };
+  }, [products]);
+
+  const handleInputFocus = useCallback(() => {
+    setupKeyboard(searchTerm, handleSearch);
+  }, [searchTerm, setupKeyboard, handleSearch]);
+
 
   const handleProductSelect = (product) => {
+    hideKeyboard();
     onNext(product);
   };
+
+  const closeKeyboard = useCallback(() => {
+    hideKeyboard();
+  }, [hideKeyboard]);
 
   const renderProductItem = (product) => (
     <div 
@@ -88,7 +99,10 @@ export default function ListStep({ productType, onNext, onBack, onCancel }) {
       <div className={styles.topNav}>
         <Button 
           className={styles.backButton}
-          onClick={onBack}
+          onClick={() => {
+            closeKeyboard();
+            onBack();
+          }}
         >
           Back
         </Button>
@@ -103,7 +117,9 @@ export default function ListStep({ productType, onNext, onBack, onCancel }) {
           className={styles.searchBar}
           placeholder={`Search ${productType}s...`}
           value={searchTerm}
-          onChange={handleSearch}
+          readOnly
+          onClick={handleInputFocus}
+          onFocus={handleInputFocus}
         />
       </div>
       
@@ -122,7 +138,10 @@ export default function ListStep({ productType, onNext, onBack, onCancel }) {
       <div className={styles.bottomButtons}>
         <Button 
           className={styles.cancelButton}
-          onClick={onCancel}
+          onClick={() => {
+            closeKeyboard();
+            onCancel();
+          }}
         >
           Cancel
         </Button>

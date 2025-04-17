@@ -21,11 +21,6 @@ export default function GlobalKeyboard() {
         onChange={input => {
           if (onKeyboardInput) onKeyboardInput(input);
         }}
-        onKeyPress={button => {
-          if (button === "{enter}") {
-            setShowKeyboard(false);
-          }
-        }}
         value={keyboardValue}
       />
     </div>
