@@ -1,0 +1,58 @@
+.errorContainer {
+  text-align: center;
+  background-color: #f4f4f9;
+  padding: 2rem;
+}
+
+.errorTitle {
+  font-size: 2.5rem;
+  color: #000000;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.errorSubtitle {
+  font-size: 1.8rem;
+  color: #000000;
+  margin-bottom: 1.5rem;
+}
+
+.errorReason {
+  font-size: 1.5rem;
+  color: #000000;
+  margin-top: 1rem;
+}
+
+.errorReasonText {
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+.buttonContainer {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.errorPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #f4f4f9;
+  padding: 2rem;
+  border: 5px solid #e74c3c;
+}
+
+.warningIcon {
+  width: 10%;
+  height: auto;
+  margin-top: 3rem;
+}
+
+.unknownError {
+  font-size: 1.5rem;
+  color: #333;
+}

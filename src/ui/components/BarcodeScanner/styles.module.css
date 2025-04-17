@@ -1,0 +1,63 @@
+.scannerContainer {
+  position: fixed;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  z-index: 1000;
+  transition: box-shadow 0.2s ease;
+}
+
+.scannerContainer:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.dragHandle {
+  background: #6A1B9A;
+  color: white;
+  padding: 10px 15px;
+  cursor: move;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.minimizeButton {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0 5px;
+}
+
+.scannerContent {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  background: #000;
+}
+
+.scannerContent video {
+  object-fit: cover !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin-bottom: -5px !important; /* Remove bottom margin */
+  display: block !important;
+}
+
+.detected {
+  border: 4px solid #4CAF50;
+}
+
+.scannerComponent {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0 0 8px 8px;
+}

@@ -1,0 +1,27 @@
+{
+  "name": "self-checkout",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "date-fns": "^4.1.0",
+    "next": "15.2.4",
+    "react": "^18.2.0",
+    "react-barcode-scanner": "^4.0.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0",
+    "react-idle-timer": "^5.7.2",
+    "react-nice-dates": "^3.1.0",
+    "react-simple-keyboard": "^3.8.58"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "eslint": "^9",
+    "eslint-config-next": "15.2.4"
+  }
+}

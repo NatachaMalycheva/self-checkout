@@ -1,0 +1,47 @@
+[
+  {
+    "barcode": "5063270105672",
+    "type": "product",
+    "name": "Lipton Thé Noir",
+    "discount": 0.19,
+    "price": 1.99
+  },
+  {
+    "barcode": "6420256016824",
+    "type": "product",
+    "name": "Jenkki Professional strawberry",
+    "price": 3.99
+  },
+  {
+    "barcode": "3329757004695",
+    "type": "product",
+    "name": "Canderel Liquide",
+    "price": 2.65
+  },
+  {
+    "barcode": "8000500025857",
+    "type": "product",
+    "name": "Kinder bueno (6 pieces)",
+    "discount": 3.35,
+    "price": 5.70
+  },
+  {
+    "barcode": "8720573886901",
+    "type": "product",
+    "name": "Salt and Pepper grinder 220g",
+    "discount": 1.20,
+    "price": 5.76
+  },
+  {
+    "barcode": "3234625308",
+    "type": "cashier"
+  },
+  {
+    "barcode": "3238361486",
+    "type": "manager"
+  },
+  {
+    "barcode": "6275980183854727104",
+    "type": "fidelity"
+  }
+]
